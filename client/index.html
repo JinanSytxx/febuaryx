@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Cinta</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ffe5f0, #ffd1dc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        .title {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .message {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            min-height: 100px;
+        }
+        .button {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        #noButton {
+            background: white;
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 class="title">Surat Cinta Untuk Kamu</h1>
+        <p class="note">kamu mau gk jadi pacar aku?</p>
+        <p class="note">WAJIB BACA SEBELUM JAWAB :)</p>
+        <p class="note">maap kalo confess nya sederhana gak kayak orang² ngasih buket bunga atau coklat, karna aku cmn bisa buat kek gini aja hehe, aku harap kamu mau terima:)</p>
+        
+        <div class="message">
+            <p>Setiap kali aku denger suara kamu, hati aku kek gimana gitu, aneh jir...</p>
+            <p>setiap kamu ngajak call di discord, main game bareng & nonton film bareng, itu seru bgt</p>
+        </div>
+
+        <div class="buttons">
+            <button class="button" onclick="handleYes()">Iya</button>
+            <button class="button" id="noButton" onmouseover="moveButton()">Gak</button>
+        </div>
+
+        <button class="button" onclick="playMusic()">Play Music ♫</button>
+    </div>
+
+    <script>
+        function handleYes() {
+            alert('I Love You! ❤️');
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'fixed';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+
+        function playMusic() {
+            const audio = new Audio('/seandainya.mp3');
+            audio.currentTime = 114;
+            audio.loop = true;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
